@@ -19,10 +19,15 @@ class apiEndpoint(Resource):
     #Rest Api used to upload a file
     @api.expect(upload_parser)
     def post(self):
+	#Prendere il file audio come input
         args = upload_parser.parse_args()
         arg_value = args["user_id"]  # This is FileStorage instance
+	audio_input = arg_value
         transformToJson = JsonTransformer()
-        result = arg_value
+	#richiamare classificatore 
+	#transcription = deepSpeechPrediction(audio_input)
+	#result = transcription
+	result = arg_value
         jsonResult = transformToJson.transform(result)
 
         return Response(jsonResult, status=200, mimetype='application/json')
