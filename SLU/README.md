@@ -9,6 +9,10 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
+Install the trained pipeline:
+```
+python3 -m spacy download en_core_web_lg
+```
 Download custom datasets [here](https://bit.ly/3dWz1CG).
 
 ## RUN
